@@ -4,8 +4,10 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"os"
 
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/joho/godotenv"
 )
 
 // DB adalah variabel global koneksi database
@@ -13,11 +15,17 @@ var DB *sql.DB
 
 // ConnectDB untuk membuat koneksi ke MySQL
 func ConnectDB() {
-	username := "root"
-	password := ""
-	host := "localhost"
-	port := "3306"
-	database := "rest-api-library"
+	// Load .env file
+	if err := godotenv.Load(); err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	// Ambil variabel dari .env
+	username := os.Getenv("DB_USER")
+	password := os.Getenv("DB_PASS")
+	host := os.Getenv("DB_HOST")
+	port := os.Getenv("DB_PORT")
+	database := os.Getenv("DB_NAME")
 
 	// format DSN (Data Source Name)
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", username, password, host, port, database)
