@@ -1,5 +1,5 @@
-# Set default behavior, auto-convert line endings
+# set default behavior, auto-convert line endings
 * text=auto
 
-# Specific extensions
+# specific extensions
 *.go text eol=lf
