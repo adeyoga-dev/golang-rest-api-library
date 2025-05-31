@@ -1,0 +1,31 @@
+# File environment
+.env
+
+# Binary files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Build output
+/bin/
+/out/
+
+# Vendor directory
+/vendor/
+
+# IDE/editor config
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test binaries
+*.test
