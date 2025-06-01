@@ -28,6 +28,7 @@ func getQueryParamInt(c echo.Context, key string, defaultValue int) int {
 	if err != nil || val < 1 {
 		return defaultValue
 	}
+
 	return val
 }
 
