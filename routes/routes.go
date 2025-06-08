@@ -9,7 +9,6 @@ import (
 func BookRoutes(e *echo.Echo) {
 	api := e.Group("/api")
 	bookGroup := api.Group("/books")
-
 	bookGroup.GET("", handlers.GetBooks)
 	bookGroup.GET("/:id", handlers.GetBookByID)
 	bookGroup.POST("", handlers.CreateBook)
